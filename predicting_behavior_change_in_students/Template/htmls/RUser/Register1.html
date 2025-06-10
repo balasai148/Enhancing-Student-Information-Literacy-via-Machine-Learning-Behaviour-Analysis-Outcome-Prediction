@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Register</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<style type="text/css">
+<!--
+body {
+    background-color: #f5f5f5;
+}
+.style5 {
+	font-size: 24px;
+	color: #0051ff;
+}
+.style12 {font-weight: bold}
+.style13 {font-size: 24px; color: #d000ff; font-weight: bold; }
+.style19 {color: #FFFF00; font-weight: bold; }
+.style22 {color: #FFFFFF; font-weight: bold; } /* white text on button/box */
+.style23 {
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.chocolate-box {
+    background-color: #7c8624b5;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+input, textarea, select {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+-->
+</style>
+</head>
+<body>
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+      <div class="menu_nav">
+        <p>&nbsp;</p>
+      </div>
+      <div class="mainbar">
+        <h1 align="center"><a href="index.html"><span class="content style5">Enhancing Student Information Literacy via Machine Learning: Behaviour Analysis & Outcome Prediction</span></a></h1>
+
+        <div class="tab-content tab-space">
+            <div class="tab-pane active" id="preview-alerts">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+        <link href="https://unpkg.com/soft-ui-design-system@1.0.1/assets/css/soft-design-system.min.css" rel="stylesheet" />
+
+        <div class="container py-5">
+          <div class="row">
+            <div class="alert alert-primary text-white font-weight-bold" role="alert">
+              <p align="center"><span class="active"><span class="style12">
+                <a href="{% url 'index' %}">Home | </a>
+                <a href="{% url 'login' %}">Remote User </a> |
+                <a href="{% url 'serviceproviderlogin' %}">Service Provider</a>
+              </span></span></p>
+            </div>
+          </div>
+
+          <img src="{% static 'Banner.jpg'%}" width="1297" height="327" alt="" class="fl" />
+        </div>
+        <div class="clr"></div>
+        <div class="slider"></div>
+        <div class="clr"></div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="content_resize">
+        <div class="mainbar">
+          <div class="article">
+            <h2 align="center" class="style13">Applied behavior analysis (ABA), multimodal learning analytics (MMLA), predictive modeling, special education needs (SEN)...</h2>
+            <div align="center">
+              <div class="container-fluid chocolate-box">
+                <form role="form" method="POST">
+                  {% csrf_token %}
+                  <p>
+                    {% load static %}
+                    <img src="{% static '/Register.jpg' %}" alt="My image"><br>
+                    <span class="style22">JOIN THE EXPERIENCE !!!</span>
+                  </p>
+                  <table width="100%" border="0" align="center">
+                    <tr>
+                      <td><span class="style22">Enter Username </span></td>
+                      <td><input type="text" name="username" id="username" placeholder="User Name" required /></td>
+                      <td><span class="style22">Enter Password </span></td>
+                      <td><input type="password" name="password" id="password" placeholder="Password" required /></td>
+                    </tr>
+                    <tr>
+                      <td><span class="style22">Enter EMail Id </span></td>
+                      <td><input type="email" name="email" id="email" placeholder="Enter Email" required /></td>
+                      <td><span class="style22">Enter Address </span></td>
+                      <td><textarea name="address" placeholder="Enter Address"></textarea></td>
+                    </tr>
+                    <tr>
+                      <td><span class="style22">Enter Gender </span></td>
+                      <td>
+                        <select name="gender">
+                          <option>----Select Gender ----</option>
+                          <option>Male</option>
+                          <option>Female</option>
+                        </select>
+                      </td>
+                      <td><span class="style22">Enter Mobile Number </span></td>
+                      <td><input type="number" name="phoneno" id="phoneno" placeholder="Enter Mobile Number" required /></td>
+                    </tr>
+                    <tr>
+                      <td><span class="style22">Enter Country Name </span></td>
+                      <td><input type="text" name="country" id="country" placeholder="Enter Country Name" required /></td>
+                      <td><span class="style22">Enter State Name </span></td>
+                      <td><input type="text" name="state" id="state" placeholder="Enter State Name" required /></td>
+                    </tr>
+                    <tr>
+                      <td><span class="style22">Enter City Name </span></td>
+                      <td><input type="text" name="city" id="city" placeholder="Enter City Name" required /></td>
+                      <td>&nbsp;</td>
+                      <td><input type="submit" class="btn btn-lg btn-light" name="submit" value="Register" /></td>
+                    </tr>
+                  </table>
+                </form>
+              </div>
+
+              <br />
+
+              <table border="0" align="center" class="chocolate-box">
+                <tr>
+                  <td><div align="center" class="style23"><span class="style6">Registered Status</span> :: {{object}}</div></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar"><div class="clr"></div></div>
+        <div class="clr"></div>
+      </div>
+    </div>
+    <div class="fbg"></div>
+    <div class="footer"></div>
+  </div>
+</div>
+</body>
+</html>
